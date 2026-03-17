@@ -22,6 +22,8 @@
 		"Dawnzera": "#84E290"
 	},
 	"cellColors": [
+		{ "row": "Contraindications", "column": "Berinert", "color": "#FFCDD2" },
+		{ "row": "Black Box Warning",  "column": "Kalbitor", "color": "#FFD54F" }
 	],
 	"drugCategories": [
 		{
