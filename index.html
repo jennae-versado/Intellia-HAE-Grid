@@ -48,36 +48,55 @@
         var iconExpand = document.getElementById('icon-expand');
         var iconCollapse = document.getElementById('icon-collapse');
 
+        // Determine which document/element to use for fullscreen.
+        // Try window.top first (same-origin: direct link or Storyline local).
+        // Fall back to current document (cross-origin: Articulate Review).
+        function getTopDoc() {
+          try { void window.top.document.documentElement; return window.top.document; }
+          catch(e) { return document; }
+        }
+
         function enterFullscreen() {
-          var el = window.top.document.documentElement;
-          if (el.requestFullscreen) el.requestFullscreen();
-          else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
-          else if (el.msRequestFullscreen) el.msRequestFullscreen();
+          var d = getTopDoc();
+          var el = d.documentElement;
+          try {
+            if (el.requestFullscreen) el.requestFullscreen();
+            else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+            else if (el.msRequestFullscreen) el.msRequestFullscreen();
+          } catch(e) {}
         }
 
         function exitFullscreen() {
-          var d = window.top.document;
-          if (d.exitFullscreen) d.exitFullscreen();
-          else if (d.webkitExitFullscreen) d.webkitExitFullscreen();
-          else if (d.msExitFullscreen) d.msExitFullscreen();
+          var d = getTopDoc();
+          try {
+            if (d.exitFullscreen) d.exitFullscreen();
+            else if (d.webkitExitFullscreen) d.webkitExitFullscreen();
+            else if (d.msExitFullscreen) d.msExitFullscreen();
+          } catch(e) {}
+        }
+
+        function isFullscreen() {
+          var d = getTopDoc();
+          return !!(d.fullscreenElement || d.webkitFullscreenElement);
         }
 
         btn.addEventListener('click', function() {
-          if (!window.top.document.fullscreenElement && !window.top.document.webkitFullscreenElement) {
-            enterFullscreen();
-          } else {
-            exitFullscreen();
-          }
+          if (!isFullscreen()) { enterFullscreen(); } else { exitFullscreen(); }
         });
 
         function onFullscreenChange() {
-          var isFs = !!(window.top.document.fullscreenElement || window.top.document.webkitFullscreenElement);
-          iconExpand.style.display = isFs ? 'none' : '';
-          iconCollapse.style.display = isFs ? '' : 'none';
+          var fs = isFullscreen();
+          iconExpand.style.display = fs ? 'none' : '';
+          iconCollapse.style.display = fs ? '' : 'none';
         }
 
-        window.top.document.addEventListener('fullscreenchange', onFullscreenChange);
-        window.top.document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+        // Listen on both possible documents
+        document.addEventListener('fullscreenchange', onFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+        try {
+          window.top.document.addEventListener('fullscreenchange', onFullscreenChange);
+          window.top.document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+        } catch(e) {}
       })();
     </script>
     
