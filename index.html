@@ -10,5 +10,132 @@
   <body>
     <div id="app"></div>
     
+  <script>
+    (async function () {
+      var config;
+      try { config = await fetch('./config.json').then(function(r) { return r.json(); }); }
+      catch (e) { return; }
+
+      var headerColors = config.columnHeaderColors || {};
+      var cellColors = config.cellColors || [];
+      var drugCategories = config.drugCategories || [];
+      var hasHeaderColors = Object.keys(headerColors).some(function(k) { return !!headerColors[k]; });
+      if (!hasHeaderColors && !cellColors.length && !drugCategories.length) return;
+
+      function applyColors() {
+        var table = document.querySelector('table');
+        if (!table) return;
+
+        var ths = Array.from(table.querySelectorAll('thead th'));
+        var colIndexMap = {};
+        ths.forEach(function(th, i) {
+          var text = th.textContent.trim().toLowerCase();
+          Object.keys(headerColors).forEach(function(key) {
+            if (text.startsWith(key.toLowerCase())) {
+              colIndexMap[key] = i;
+              if (headerColors[key]) {
+                th.style.backgroundColor = headerColors[key];
+              }
+            }
+          });
+          cellColors.forEach(function(entry) {
+            var col = entry.column || '';
+            if (text.startsWith(col.toLowerCase())) {
+              colIndexMap[col] = i;
+            }
+          });
+        });
+
+        if (cellColors.length) {
+          var rows = Array.from(table.querySelectorAll('tr')).filter(function(r) { return r.querySelector('td'); });
+          rows.forEach(function(row) {
+            var cells = Array.from(row.querySelectorAll('td'));
+            if (!cells.length) return;
+            var rowLabel = (cells[0].textContent || '').trim().toLowerCase();
+            cellColors.forEach(function(entry) {
+              var rowKey = (entry.row || '').toLowerCase();
+              var colKey = entry.column || '';
+              var color = entry.color || '';
+              if (!color) return;
+              if (rowLabel.includes(rowKey)) {
+                var idx = colIndexMap[colKey];
+                if (idx !== undefined && cells[idx]) {
+                  cells[idx].style.backgroundColor = color;
+                }
+              }
+            });
+          });
+        }
+      }
+
+      function splitDrugList() {
+        if (!drugCategories.length) return;
+
+        var bEls = Array.from(document.querySelectorAll('b'));
+        var drugNameB = bEls.find(function(el) { return el.textContent.trim() === 'Drug Name'; });
+        if (!drugNameB) return;
+
+        var container = drugNameB.parentElement;
+        while (container && !container.querySelector('ul')) {
+          container = container.parentElement;
+        }
+        if (!container) return;
+
+        var ul = container.querySelector('ul');
+        if (!ul) return;
+
+        // Skip if group headers are already present
+        if (ul.querySelector('[data-group-header]')) return;
+
+        // Map bold drug name -> <li> element
+        var nameToLi = {};
+        Array.from(ul.querySelectorAll('li')).forEach(function(li) {
+          var boldEl = li.querySelector('b');
+          if (boldEl) {
+            nameToLi[boldEl.textContent.trim().toLowerCase()] = li;
+          }
+        });
+
+        // Insert a header <li> before the first drug in each category
+        drugCategories.forEach(function(cat) {
+          var firstDrug = (cat.drugs || [])[0];
+          if (!firstDrug) return;
+          var firstLi = nameToLi[firstDrug.toLowerCase()];
+          if (!firstLi) return;
+
+          var headerLi = document.createElement('li');
+          headerLi.setAttribute('data-group-header', 'true');
+          headerLi.style.cssText = [
+            'font-weight:700',
+            'font-size:0.68rem',
+            'text-transform:uppercase',
+            'letter-spacing:0.06em',
+            'color:#888',
+            'padding:10px 0 3px 0',
+            'pointer-events:none',
+            'list-style:none',
+            'border-top:1px solid #e5e7eb',
+            'margin-top:4px'
+          ].join(';');
+          headerLi.textContent = cat.label;
+          ul.insertBefore(headerLi, firstLi);
+        });
+      }
+
+      function applyAll() {
+        applyColors();
+        splitDrugList();
+      }
+
+      var timer;
+      var observer = new MutationObserver(function() {
+        clearTimeout(timer);
+        timer = setTimeout(applyAll, 60);
+      });
+      var appEl = document.getElementById('app');
+      if (appEl) observer.observe(appEl, { childList: true, subtree: true });
+      applyAll();
+    })();
+  </script>
   </body>
 </html>
