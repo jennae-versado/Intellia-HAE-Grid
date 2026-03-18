@@ -710,14 +710,14 @@ and clearance (per kg basis) was faster compared to adults; the clinical
 implication of this difference is unknown<br/><br/>Studies have not evaluated PK by gender, race, geriatric age, or the
 presence of renal or hepatic impairment","Following one 30 mg dose to healthy participants, mean PK
 parameters were:
-<ul><li>Cmax = 586 ng/mL ~2-3 hours post-dose</li>
+<ul><li>C<sub>max</sub> = 586 ng/mL ~2-3 hours post-dose</li>
 <li>AUC = 3017 ng*hour/mL</li>
 <li>Half-life = 2.0 hours</li>
 <li>Clearance = 153 mL/min</li>
 <li>Volume of distribution = 26.4 L</li></ul><br/><b>Specific Populations</b><br/>Patient body weight, age, and gender were not found to significantly
 affect Kalbitor exposure<br/><br/>No PK data are available in patients or participants with hepatic or
 renal impairment","PK profile of Firazyr is similar in patients with HAE and healthy participants<br/><br/>Following one 30 mg dose, mean PK parameters were:
-<ul><li>Cmax = 974 ng/mL after ~0.75 hours</li>
+<ul><li>C<sub>max</sub> = 974 ng/mL after ~0.75 hours</li>
 <li>Mean AUC = 2165 ng*hr/mL</li>
 <li>Half-life = 1.4 hours</li>
 <li>Clearance = 245 mL/min</li>
@@ -728,15 +728,15 @@ those with hepatic impairment<br/><br/>A renal impairment study was not conducte
 expected to affect PK<br/><br/>Age and gender effects on PK were observed, but dose adjustment is
 not warranted based on age or gender:
 <ul><li>Older patients (&gt;65 years) tend to have lower clearance and
-higher systemic exposure (AUC and Cmax) than younger patients
+higher systemic exposure (AUC and C<sub>max</sub>) than younger patients
 (18-45 years)</li>
 <li>Clearance is correlated with body weight; thus, female patients
 with typically lower body weights compared to male patients have lower
 clearance values, resulting in ~2-fold higher systemic exposure (AUC and
-Cmax)</li></ul>","Following Ruconest 50 U/kg in patients with asymptomatic HAE, mean PK
+C<sub>max</sub>)</li></ul>","Following Ruconest 50 U/kg in patients with asymptomatic HAE, mean PK
 parameters were:
-<ul><li>Cmax = 1.2 U/mL</li>
-<li>Tmax = 0.31 hours</li>
+<ul><li>C<sub>max</sub> = 1.2 U/mL</li>
+<li>T<sub>max</sub> = 0.31 hours</li>
 <li>AUC = 3.3 U*hr/mL</li>
 <li>Half-life = 2.4 hours</li>
 <li>Clearance = 1207 mL/hour</li>
@@ -744,12 +744,12 @@ parameters were:
 over 25-100 U/kg dose range<br/><br/><b>Specific Populations</b><br/>Studies have not evaluated PK by race, age, or the presence of renal
 or hepatic impairment","Following one 600 mg dose in patients with HAE, PK parameters
 were:
-<ul><li>Geometric mean Cmax = 6080 ng/mL</li>
+<ul><li>Geometric mean C<sub>max</sub> = 6080 ng/mL</li>
 <li>Mean AUC = 17,600 ng*hr/mL</li></ul><br/>Following a second 600 mg dose 3 hours after the first dose,
-Cmax increases 10% and AUC increases 90% when compared to
+C<sub>max</sub> increases 10% and AUC increases 90% when compared to
 data following a single dose<br/><br/>No clinically relevant differences in PK observed between healthy
 participants and patients with HAE<br/><br/>Following a single 600 mg dose:
-<ul><li>Median Tmax = ~1 hour</li>
+<ul><li>Median T<sub>max</sub> = ~1 hour</li>
 <li>Mean half-life = 5.3-8.9 hours</li>
 <li>Estimated clearance = 30.7 L/hour</li>
 <li>Estimated volume of distribution = 70.1 L</li></ul><br/>Sebetralstat is primarily metabolized by CYP3A4 and to a lesser
@@ -758,39 +758,39 @@ sex, race, or mild renal impairment (eGFR 60-89 mL/min/1.73
 m<sup>2</sup>)<br/><br/>Effect of moderate and severe renal impairment (eGFR &lt;60
 mL/min/1.73 m<sup>2</sup>) on PK is unknown","Following one 400 mg dose in healthy male volunteers, PK
 parameters were:
-<ul><li>Mean Cmax = 69.6 ng/mL</li>
-<li>Mean Tmax = 2.47 hours</li>
+<ul><li>Mean C<sub>max</sub> = 69.6 ng/mL</li>
+<li>Mean T<sub>max</sub> = 2.47 hours</li>
 <li>Mean AUC = 601 ng*hr/mL</li>
 <li>Mean half-life = 9.70 hours</li>
-<li>Mean clearance = 727 L/hour</li></ul><br/>Exposure (Cmax and AUC) is not dose proportional<br/><br/>Bioavailability, absorption, and exposure are affected by food
+<li>Mean clearance = 727 L/hour</li></ul><br/>Exposure (C<sub>max</sub> and AUC) is not dose proportional<br/><br/>Bioavailability, absorption, and exposure are affected by food
 intake<br/><br/>Can partition into cell membranes and likely distributes into deep tissues","Following one 1000 U dose in patients with nonsymptomatic HAE, mean PK parameters were:
-<ul><li>Cmax = 0.68 U/mL</li>
-<li>Tmax = 3.9 hours</li>
+<ul><li>C<sub>max</sub> = 0.68 U/mL</li>
+<li>T<sub>max</sub> = 3.9 hours</li>
 <li>AUC = 74.5 U*hr/mL</li>
 <li>Half-life = 56 hours</li>
-<li>Clearance = 0.85 mL/min</li></ul><br/>Exposure (Cmax and AUC) increased from a single to double
+<li>Clearance = 0.85 mL/min</li></ul><br/>Exposure (C<sub>max</sub> and AUC) increased from a single to double
 dose of Cinryze, though it was not dose proportional<br/><br/><b>Specific Populations</b><br/>In children 7-11 years of age administered 500 U or 1000 U every 3-4
 days for 12 weeks, mean C1-INH functional activities were 0.53 U/mL, and
-0.81 U/mL, respectively,<br/><br/>vs the baseline value 0.18 U/mL (1 hour after final dose)<br/><br/>After 1000 U dosing, mean exposure (AUC and Cmax) was ~30%
+0.81 U/mL, respectively,<br/><br/>vs the baseline value 0.18 U/mL (1 hour after final dose)<br/><br/>After 1000 U dosing, mean exposure (AUC and C<sub>max</sub>) was ~30%
 higher in children 7-11 years of age than in adults<br/><br/>Studies have not evaluated PK based on gender, race, geriatric age,
 or the presence of renal or hepatic impairment","Following 60 IU/kg twice weekly dosing, PK parameters were:
 <ul><li>Mean clearance = 1.03 mL/hour/kg</li>
-<li>Geometric mean Cmax = 60.7%</li>
-<li>Median Tmax = 59 hours</li>
+<li>Geometric mean C<sub>max</sub> = 60.7%</li>
+<li>Median T<sub>max</sub> = 59 hours</li>
 <li>Median half-life = 69 hours</li></ul><br/>Steady-state PK not dose proportional at 20-80 IU/kg in patients with
 HAE<br/><br/><b>Specific Populations</b><br/>PK have not been evaluated by gender, race, or the presence of renal
 or hepatic impairment<br/><br/>Population analysis showed age did not significantly affect PK, but
 body weight–adjusted clearance was 10%-11% higher in children (8 to
 &lt;12 years) and adolescents (12 to &lt;18 years) compared to
 adults","PK were approximately dose-proportional in the therapeutic dose range in patients with HAE<br/><br/>Time to reach steady state concentration was ~70 days<br/><br/>Following one 300 mg Q2W dose, mean PK parameters were:
-<ul><li>Cmax = 34.4 mcg/mL</li>
-<li>Tmax = 4.11 days</li>
+<ul><li>C<sub>max</sub> = 34.4 mcg/mL</li>
+<li>T<sub>max</sub> = 4.11 days</li>
 <li>AUC = 408 mcg*day/mL</li>
 <li>Half-life = 15 days</li>
 <li>Volume of distribution = 16.6 L</li>
 <li>Clearance = 0.809 L/day</li></ul><br/><b>Specific Populations</b><br/>Age, gender, and race did not meaningfully affect PK after correcting
 for body weight. Body weight affected clearance, distribution, and
-exposure (AUC and Cmax) in lighter patients, but dose
+exposure (AUC and C<sub>max</sub>) in lighter patients, but dose
 adjustment is not required<br/><br/>Average concentration at steady state differed in pediatric and adult
 patients:
 <ul><li>~25% higher in patients 12 to &lt;18 years on 300 mg Q2W vs
@@ -801,28 +801,28 @@ on 300 mg Q2W</li></ul><br/>Based on population analysis, mild (eGFR 60-89 mL/mi
 m<sup>2</sup>) or moderate (30-59 mL/min/1.73 m<sup>2</sup>) renal
 impairment had no effect on clearance or volume of distribution","Exposure increases in a greater than dose-proportional manner and
 steady state is reached in ~6-12 days
-<ul><li>After 150 mg once daily in adults, geometric mean Cmax
+<ul><li>After 150 mg once daily in adults, geometric mean C<sub>max</sub>
 = 158 ng/mL; AUC = 2770 ng*hr/mL</li>
-<li>After 110 mg once daily, geometric mean Cmax is 97.8
+<li>After 110 mg once daily, geometric mean C<sub>max</sub> is 97.8
 ng/mL; AUC = 1600 ng*hr/mL</li></ul><br/>Median half-life is ~93 hours<br/><br/>PK similar in healthy adults and patients with HAE<br/><br/>Metabolized by CYP2D6 and CYP3A4<br/><br/><b>Specific Populations</b><br/>In adults and pediatric patients 12 to &lt;18 years of age, no
 significant differences in PK based on age, sex, race, and body
 weight<br/><br/>Based on population analyses, body weight affected systemic exposure.
 In patients 2 to &lt;12 years of age at the recommended dosage, median
-Cmax is expected to be up to 24% higher compared to adults,
+C<sub>max</sub> is expected to be up to 24% higher compared to adults,
 though this difference is not considered clinically significant<br/><br/>Adults with severe renal impairment (CLCR &lt;30 mL/min)
 treated with one dose 1.33 × the MRD had no clinically significant
 difference in exposure compared with patients with normal renal function
-(Cmax increased by 47%, AUC increased by 14%). PK have not
+(C<sub>max</sub> increased by 47%, AUC increased by 14%). PK have not
 been evaluated in patients with ESRD<br/><br/>PK were compared in adults with normal or impaired hepatic function
 following one 150 mg dose:
 <ul><li>Mild impairment: PK unchanged</li>
-<li>Moderate impairment: Had increased Cmax (by 77%), AUC
+<li>Moderate impairment: Had increased C<sub>max</sub> (by 77%), AUC
 (by 78%), and median half-life (by 37%)</li>
-<li>Severe impairment: Had increased Cmax (by 27%) and
+<li>Severe impairment: Had increased C<sub>max</sub> (by 27%) and
 median half-life (by 22%), and decreased AUC (by 5%)</li></ul>","Following one 200 mg SC dose to healthy volunteers, mean PK parameters were:
-<ul><li>Cmax = 18.4 mcg/mL</li>
+<ul><li>C<sub>max</sub> = 18.4 mcg/mL</li>
 <li>AUC = 11470 mcg*hr/mL</li>
-<li>Tmax = 6 days</li>
+<li>T<sub>max</sub> = 6 days</li>
 <li>Volume of distribution = 11.8 L</li>
 <li>Half-life = 17.4 days</li>
 <li>Clearance = 0.02 L/hour</li></ul><br/>PK similar between healthy volunteers and patients with HAE<br/><br/><b>Specific Populations</b><br/>No clinically significant differences in PK observed based on age,
@@ -832,8 +832,8 @@ m<sup>2</sup>) on PK is unknown","Following multiple doses Q4W and/or Q8W, PK si
 healthy participants and patients with HAE<br/><br/>In healthy volunteers, AUC increased in a greater than
 dose-proportional manner (at 0.25 × MRD to 80 mg Q4W)<br/><br/>Following 80 mg Q4W in patients with HAE, geometric mean PK
 parameters were:
-<ul><li>Cmax = 417 ng/mL</li>
-<li>AUC = 5240 ng*hr/mL</li></ul><br/>Absorbed with median Tmax of ~2 hours post-dose<br/><br/>Half-life is ~1 month in a typical patient with HAE<br/><br/>Expected to distribute primarily to the liver and kidneys<br/><br/>The ASO is expected to be metabolized by nucleases within the liver.
+<ul><li>C<sub>max</sub> = 417 ng/mL</li>
+<li>AUC = 5240 ng*hr/mL</li></ul><br/>Absorbed with median T<sub>max</sub> of ~2 hours post-dose<br/><br/>Half-life is ~1 month in a typical patient with HAE<br/><br/>Expected to distribute primarily to the liver and kidneys<br/><br/>The ASO is expected to be metabolized by nucleases within the liver.
 Based on in vitro studies, donidalorsen is not a substrate of CYP
 enzymes<br/><br/>The linker that connects the ASO to GalNAc residues undergoes
 dephosphorylation and oxidative metabolism to form inactive metabolites, which are minimally released in circulation<br/><br/><b>Specific Populations</b><br/>No clinically meaningful differences in PK or PD based on age, body
