@@ -641,7 +641,7 @@ human plasma","Human, plasma-derived, purified, pasteurized, lyophilized C1-INH
 concentrate to be reconstituted","Plasma kallikrein inhibitor; non–plasma-derived, recombinant, fully
 human, monoclonal antibody produced in Chinese Hamster Ovary cells",Plasma kallikrein inhibitor,"FXIIa inhibitor; recombinant, fully human, monoclonal antibody
 produced in Chinese Hamster Ovary cells","Prekallikrein-directed ASO covalently linked to a ligand containing
-3<br/><br/><i>N</i><br/><br/>-acetyl galactosamine residues to facilitate delivery of the
+3 <i>N</i>-acetyl galactosamine residues to facilitate delivery of the
 ASO to hepatocytes"
 Mechanism of Action,"Replaces the missing or malfunctioning C1-INH protein in
 patients","Selective, reversible inhibitor of plasma kallikrein<br/><br/>Binds to plasma kallikrein and blocks its binding site, inhibiting
@@ -771,7 +771,7 @@ intake<br/><br/>Can partition into cell membranes and likely distributes into de
 <li>Clearance = 0.85 mL/min</li></ul><br/>Exposure (C<sub>max</sub> and AUC) increased from a single to double
 dose of Cinryze, though it was not dose proportional<br/><br/><b>Specific Populations</b><br/>In children 7-11 years of age administered 500 U or 1000 U every 3-4
 days for 12 weeks, mean C1-INH functional activities were 0.53 U/mL, and
-0.81 U/mL, respectively,<br/><br/>vs the baseline value 0.18 U/mL (1 hour after final dose)<br/><br/>After 1000 U dosing, mean exposure (AUC and C<sub>max</sub>) was ~30%
+0.81 U/mL, respectively, vs the baseline value 0.18 U/mL (1 hour after final dose)<br/><br/>After 1000 U dosing, mean exposure (AUC and C<sub>max</sub>) was ~30%
 higher in children 7-11 years of age than in adults<br/><br/>Studies have not evaluated PK based on gender, race, geriatric age,
 or the presence of renal or hepatic impairment","Following 60 IU/kg twice weekly dosing, PK parameters were:
 <ul><li>Mean clearance = 1.03 mL/hour/kg</li>
@@ -796,7 +796,7 @@ patients:
 <ul><li>~25% higher in patients 12 to &lt;18 years on 300 mg Q2W vs
 adults on 300 mg Q2W</li>
 <li>~7% higher in patients 6 to &lt;12 years on 150 mg Q2W vs adults
-on 300 mg Q2W</li></ul><br/><ul><li>~14% lower in patients 2 to &lt;6 years on 150 mg Q4W vs adults
+on 300 mg Q2W</li><li>~14% lower in patients 2 to &lt;6 years on 150 mg Q4W vs adults
 on 300 mg Q2W</li></ul><br/>Based on population analysis, mild (eGFR 60-89 mL/min/1.73
 m<sup>2</sup>) or moderate (30-59 mL/min/1.73 m<sup>2</sup>) renal
 impairment had no effect on clearance or volume of distribution","Exposure increases in a greater than dose-proportional manner and
@@ -858,9 +858,7 @@ of symptoms within 4 hours could be administered another dose of
 Berinert (20 IU/kg for placebo group, 10 IU/kg for 10 IU/kg group), or
 of placebo (for the 20 IU/kg group). If a patient developed
 life-threatening laryngeal edema, immediate start of open-label
-treatment with a 20 IU/kg body weight dose of Berinert was allowed<br/><br/><i><sup>a</sup>As Berinert 10 IU/kg is not a recommended dose for
-treatment of acute HAE attacks, these data are not shown
-herein.</i><br/><br/><i>Key endpoint:</i>
+treatment with a 20 IU/kg body weight dose of Berinert was allowed<br/><br/><span style="font-size:0.82em"><i><sup>a</sup>As Berinert 10 IU/kg is not a recommended dose for treatment of acute HAE attacks, these data are not shown herein.</i></span><br/><br/><i>Key endpoint:</i>
 <ul><li>Median time to onset of symptom relief: 48 minutes for Berinert
 20 IU/kg vs &gt;4 hours for placebo</li></ul><br/><i>Additional endpoints:</i>
 <ul><li>Proportion of patients with onset of symptom relief within 60
@@ -995,9 +993,7 @@ randomized, placebo-controlled, crossover clinical trial (KONFIDENT)<br/><br/>Pa
 placebo. If determined by the patient, a second dose could be
 administered after 3 hours. Patients were required to treat an eligible
 attack prior to crossover to the next treatment period. Severe laryngeal
-attacks were not treated in KONFIDENT<br/><br/><i><sup>b</sup>As Ekterly 300 mg is not a recommended dose for
-treatment of acute HAE attacks, these data are not shown
-herein.</i><br/><br/>Among 110 patients who experienced ≥1 HAE attack treated with
+attacks were not treated in KONFIDENT<br/><br/><span style="font-size:0.82em"><i><sup>b</sup>As Ekterly 300 mg is not a recommended dose for treatment of acute HAE attacks, these data are not shown herein.</i></span><br/><br/>Among 110 patients who experienced ≥1 HAE attack treated with
 Ekterly, mean age was 38 years, 60% were female, and 84% were White<br/><br/>Of the 264 treated HAE attacks, 54% had peripheral symptoms only, 32%
 had abdominal symptoms only, 10% had abdominal and peripheral symptoms,
 3% had mild to moderate laryngeal symptoms, and 1% had missing attack
@@ -1047,18 +1043,14 @@ for Cinryze 1000 IU vs 3.7 for placebo during observation</li></ul><br/><i>Addit
 <ul><li>Mean absolute reduction in number of attacks vs baseline: −2.6
 for Cinryze 500 IU and −3.0 for Cinryze 1000 IU (71.1% and 84.5% mean
 reductions vs baseline, respectively)</li></ul>","Efficacy of Haegarda demonstrated in:
-<ul><li>Randomized, double-blind, placebo-controlled,</li></ul><br/>crossover trial of 90 adult and adolescent patients with symptomatic
-HAE-C1INH-Type1 or -Type2 (Study 1)
-<ul><li>Randomized, open-label, active treatment–controlled trial of 120
+<ul><li>Randomized, double-blind, placebo-controlled, crossover trial of 90 adult and adolescent patients with symptomatic HAE-C1INH-Type1 or -Type2 (Study 1)</li></ul><br/><ul><li>Randomized, open-label, active treatment–controlled trial of 120
 adult and pediatric patients with symptomatic HAE-C1INH-Type1 or -Type2
 (Study 2)</li></ul><br/><b>Study 1</b><br/>Median age was 40 years (range, 12-72) and 60 patients were
 female<br/><br/>Patients received Haegarda 60 IU/kg (n=45) or 40 IU/kg<sup>c</sup>
 (n=45) in one 16-week treatment period and then placebo in the other
 16-week treatment period. Patients self-administered Haegarda or placebo
 2 times per week. Efficacy was evaluated for the last 14 weeks of each
-period<br/><br/><i><sup>c</sup>As Haegarda 40 IU/kg is not a recommended dose for
-routine prophylaxis to prevent HAE attacks, these data are not shown
-herein.</i><br/><br/><i>Key endpoint:</i>
+period<br/><br/><span style="font-size:0.82em"><i><sup>c</sup>As Haegarda 40 IU/kg is not a recommended dose for routine prophylaxis to prevent HAE attacks, these data are not shown herein.</i></span><br/><br/><i>Key endpoint:</i>
 <ul><li>Median number of attacks per month: 0.3 for Haegarda 60 IU/kg vs
 3.8 for placebo, for median percentage reduction relative to placebo of
 95%</li></ul><br/><i>Additional endpoints:</i>
