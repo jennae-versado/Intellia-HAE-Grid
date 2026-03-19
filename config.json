@@ -21,20 +21,12 @@
 		"Andembry": "#84E290",
 		"Dawnzera": "#84E290"
 	},
-	"cellColors": [
-		{ "row": "Dosage and Administration", "column": "Berinert",  "color": "#FAE2D5" },
-		{ "row": "Dosage and Administration", "column": "Ruconest",  "color": "#FAE2D5" },
-		{ "row": "Dosage and Administration", "column": "Cinryze",   "color": "#FAE2D5" },
-		{ "row": "Dosage and Administration", "column": "Kalbitor",  "color": "#E8E8E8" },
-		{ "row": "Dosage and Administration", "column": "Firazyr",   "color": "#E8E8E8" },
-		{ "row": "Dosage and Administration", "column": "Haegarda",  "color": "#E8E8E8" },
-		{ "row": "Dosage and Administration", "column": "Takhzyro",  "color": "#E8E8E8" },
-		{ "row": "Dosage and Administration", "column": "Andembry",  "color": "#E8E8E8" },
-		{ "row": "Dosage and Administration", "column": "Dawnzera",  "color": "#E8E8E8" },
-		{ "row": "Dosage and Administration", "column": "Ekterly",   "color": "#F2CEED" },
-		{ "row": "Dosage and Administration", "column": "Generic",   "color": "#F2CEED" },
-		{ "row": "Dosage and Administration", "column": "Orladeyo",  "color": "#F2CEED" }
-	],
+	"cellColors": [],
+	"adminFilter": {
+		"Subcutaneous": ["Kalbitor", "Firazyr", "Haegarda", "Takhzyro", "Andembry", "Dawnzera"],
+		"Intravenous":  ["Berinert", "Ruconest", "Cinryze"],
+		"Oral":         ["Ekterly", "Generic", "Orladeyo"]
+	},
 	"drugCategories": [
 		{
 			"label": "On-Demand Treatments",

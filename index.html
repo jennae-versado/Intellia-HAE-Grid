@@ -13,6 +13,7 @@
       }
       img[src*="logo"] { display: none !important; }
       table td ul { padding-left: 1.2em !important; }
+      [data-admin-hidden="true"] { display: none !important; }
       #fullscreen-btn {
         position: fixed;
         bottom: 16px;
@@ -105,14 +106,15 @@
   <script>
     (async function () {
       var config;
-      try { config = await fetch('./config.json').then(function(r) { return r.json(); }); }
+      try { config = await fetch('./config.json', { cache: 'no-store' }).then(function(r) { return r.json(); }); }
       catch (e) { return; }
 
       var headerColors = config.columnHeaderColors || {};
       var cellColors = config.cellColors || [];
       var drugCategories = config.drugCategories || [];
+      var adminFilter = config.adminFilter || {};
       var hasHeaderColors = Object.keys(headerColors).some(function(k) { return !!headerColors[k]; });
-      if (!hasHeaderColors && !cellColors.length && !drugCategories.length) return;
+      if (!hasHeaderColors && !cellColors.length && !drugCategories.length && !Object.keys(adminFilter).length) return;
 
       function applyColors() {
         var table = document.querySelector('table');
@@ -214,9 +216,128 @@
         });
       }
 
+      // ── Administration filter ──────────────────────────────────────────
+      var adminChecked = {};
+      Object.keys(adminFilter).forEach(function(r) { adminChecked[r] = true; });
+      var menuColor = config.menuTextColor || '#D3451E';
+
+      function getColIndex(drugName) {
+        var table = document.querySelector('table');
+        if (!table) return -1;
+        var ths = Array.from(table.querySelectorAll('thead th'));
+        for (var i = 0; i < ths.length; i++) {
+          if (ths[i].textContent.trim().toLowerCase().startsWith(drugName.toLowerCase())) return i;
+        }
+        return -1;
+      }
+
+      function applyAdminFilter() {
+        var table = document.querySelector('table');
+        if (!table) return;
+        var allRows = Array.from(table.querySelectorAll('tr'));
+        // Clear previous
+        allRows.forEach(function(row) {
+          Array.from(row.querySelectorAll('th,td')).forEach(function(c) { c.removeAttribute('data-admin-hidden'); });
+        });
+        // Hide unchecked
+        Object.keys(adminChecked).forEach(function(route) {
+          if (!adminChecked[route]) {
+            (adminFilter[route] || []).forEach(function(drug) {
+              var idx = getColIndex(drug);
+              if (idx < 0) return;
+              allRows.forEach(function(row) {
+                var cells = Array.from(row.querySelectorAll('th,td'));
+                if (cells[idx]) cells[idx].setAttribute('data-admin-hidden', 'true');
+              });
+            });
+          }
+        });
+      }
+
+      function setCheckStyle(span, checked) {
+        if (checked) {
+          span.style.backgroundColor = menuColor;
+          span.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 16 16\' fill=\'white\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M13.707 4.293a1 1 0 0 1 0 1.414l-7 7a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414L6 10.586l6.293-6.293a1 1 0 0 1 1.414 0z\'/%3E%3C/svg%3E")';
+          span.style.backgroundSize = '80%';
+          span.style.backgroundRepeat = 'no-repeat';
+          span.style.backgroundPosition = 'center';
+        } else {
+          span.style.backgroundColor = '';
+          span.style.backgroundImage = '';
+        }
+      }
+
+      function injectAdminSection() {
+        if (!Object.keys(adminFilter).length) return;
+        if (document.getElementById('admin-filter-section')) return;
+        var attrB = Array.from(document.querySelectorAll('b')).find(function(b) {
+          return b.textContent.trim() === 'Drug Attributes';
+        });
+        if (!attrB) return;
+        var attrSection = attrB.closest('.p-6') || attrB.closest('[data-v-00a30dc2]');
+        if (!attrSection) return;
+
+        var sec = document.createElement('div');
+        sec.id = 'admin-filter-section';
+        sec.className = 'mb-2 p-6';
+
+        var routes = Object.keys(adminFilter);
+        sec.innerHTML =
+          '<div class="flex justify-between items-center mb-2">' +
+            '<b>Administration</b>' +
+            '<span class="text-xs cursor-pointer select-none" id="admin-toggle-all">Toggle All</span>' +
+          '</div>' +
+          '<ul>' +
+          routes.map(function(route) {
+            return '<li><label class="relative cursor-pointer select-none flex pl-8">' +
+              '<input type="checkbox" class="absolute opacity-0 h-0 w-0" data-admin-route="' + route + '" checked>' +
+              '<span class="absolute top-0 left-0 h-5 w-5 bg-gray-200" data-admin-span="' + route + '"></span>' +
+              '<p>' + route + '</p>' +
+            '</label></li>';
+          }).join('') +
+          '</ul>';
+
+        attrSection.parentElement.insertBefore(sec, attrSection);
+
+        // Style all as checked initially
+        routes.forEach(function(route) {
+          var span = sec.querySelector('[data-admin-span="' + route + '"]');
+          if (span) setCheckStyle(span, true);
+        });
+
+        // Checkbox events
+        sec.querySelectorAll('input[data-admin-route]').forEach(function(inp) {
+          inp.addEventListener('change', function() {
+            adminChecked[this.dataset.adminRoute] = this.checked;
+            var span = sec.querySelector('[data-admin-span="' + this.dataset.adminRoute + '"]');
+            if (span) setCheckStyle(span, this.checked);
+            applyAdminFilter();
+          });
+        });
+
+        // Toggle All
+        document.getElementById('admin-toggle-all').addEventListener('click', function() {
+          var allOn = routes.every(function(r) { return adminChecked[r]; });
+          var newVal = !allOn;
+          routes.forEach(function(r) {
+            adminChecked[r] = newVal;
+            var inp = sec.querySelector('input[data-admin-route="' + r + '"]');
+            var span = sec.querySelector('[data-admin-span="' + r + '"]');
+            if (inp) inp.checked = newVal;
+            if (span) setCheckStyle(span, newVal);
+          });
+          applyAdminFilter();
+        });
+
+        applyAdminFilter();
+      }
+      // ──────────────────────────────────────────────────────────────────
+
       function applyAll() {
         applyColors();
         splitDrugList();
+        injectAdminSection();
+        applyAdminFilter();
       }
 
       var timer;
