@@ -219,7 +219,7 @@
       // ── Administration filter ──────────────────────────────────────────
       var adminChecked = {};
       Object.keys(adminFilter).forEach(function(r) { adminChecked[r] = true; });
-      var menuColor = config.menuTextColor || '#D3451E';
+      var menuColor = config.adminFilterColor || '#2852A4';
 
       function getColIndex(drugName) {
         var table = document.querySelector('table');
