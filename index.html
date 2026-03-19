@@ -14,6 +14,8 @@
       img[src*="logo"] { display: none !important; }
       table td ul { padding-left: 1.2em !important; }
       [data-admin-hidden="true"] { display: none !important; }
+      #label input:checked ~ span[data-admin-span] { background-color: #2852A4 !important; }
+      #label:hover input:checked ~ span[data-admin-span] { background-color: #1e3d7a !important; }
       #fullscreen-btn {
         position: fixed;
         bottom: 16px;
@@ -291,7 +293,7 @@
           routes.map(function(route) {
             return '<li><label class="relative cursor-pointer select-none flex pl-8">' +
               '<input type="checkbox" class="absolute opacity-0 h-0 w-0" data-admin-route="' + route + '" checked>' +
-              '<span class="absolute top-0 left-0 h-5 w-5 bg-gray-200" data-admin-span="' + route + '"></span>' +
+              '<span class="absolute top-0 left-0 h-5 w-5 bg-gray-200" data-v-00a30dc2="" data-admin-span="' + route + '"></span>' +
               '<p>' + route + '</p>' +
             '</label></li>';
           }).join('') +
@@ -299,18 +301,10 @@
 
         attrSection.parentElement.insertBefore(sec, attrSection);
 
-        // Style all as checked initially
-        routes.forEach(function(route) {
-          var span = sec.querySelector('[data-admin-span="' + route + '"]');
-          if (span) setCheckStyle(span, true);
-        });
-
         // Checkbox events
         sec.querySelectorAll('input[data-admin-route]').forEach(function(inp) {
           inp.addEventListener('change', function() {
             adminChecked[this.dataset.adminRoute] = this.checked;
-            var span = sec.querySelector('[data-admin-span="' + this.dataset.adminRoute + '"]');
-            if (span) setCheckStyle(span, this.checked);
             applyAdminFilter();
           });
         });
@@ -322,9 +316,7 @@
           routes.forEach(function(r) {
             adminChecked[r] = newVal;
             var inp = sec.querySelector('input[data-admin-route="' + r + '"]');
-            var span = sec.querySelector('[data-admin-span="' + r + '"]');
             if (inp) inp.checked = newVal;
-            if (span) setCheckStyle(span, newVal);
           });
           applyAdminFilter();
         });
