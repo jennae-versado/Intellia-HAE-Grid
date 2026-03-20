@@ -185,12 +185,15 @@
         // Skip if group headers are already present
         if (ul.querySelector('[data-group-header]')) return;
 
+        // Normalize: strip ®, ™ and trim for matching
+        function normDrug(s) { return s.replace(/[®™]/g, '').trim().toLowerCase(); }
+
         // Map bold drug name -> <li> element
         var nameToLi = {};
         Array.from(ul.querySelectorAll('li')).forEach(function(li) {
           var boldEl = li.querySelector('b');
           if (boldEl) {
-            nameToLi[boldEl.textContent.trim().toLowerCase()] = li;
+            nameToLi[normDrug(boldEl.textContent)] = li;
           }
         });
 
@@ -198,7 +201,7 @@
         drugCategories.forEach(function(cat) {
           var firstDrug = (cat.drugs || [])[0];
           if (!firstDrug) return;
-          var firstLi = nameToLi[firstDrug.toLowerCase()];
+          var firstLi = nameToLi[normDrug(firstDrug)];
           if (!firstLi) return;
 
           var headerLi = document.createElement('li');
@@ -276,7 +279,7 @@
         var routes = Object.keys(adminFilter);
         sec.innerHTML =
           '<div class="flex justify-between items-center mb-2">' +
-            '<b>Administration</b>' +
+            '<b>Drug Administration</b>' +
             '<span class="text-xs cursor-pointer select-none" id="admin-toggle-all">Toggle All</span>' +
           '</div>' +
           '<ul>' +
