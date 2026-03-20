@@ -16,6 +16,8 @@
       [data-admin-hidden="true"] { display: none !important; }
       #label input:checked ~ span[data-admin-span] { background-color: #2852A4 !important; }
       #label:hover input:checked ~ span[data-admin-span] { background-color: #1e3d7a !important; }
+      #label input:checked ~ span[data-v-00a30dc2] { background-color: #2852A4 !important; }
+      #label:hover input:checked ~ span[data-v-00a30dc2] { background-color: #1e3d7a !important; }
       #fullscreen-btn {
         position: fixed;
         bottom: 16px;
@@ -303,8 +305,11 @@
 
         // Checkbox events
         sec.querySelectorAll('input[data-admin-route]').forEach(function(inp) {
+          var span = inp.nextElementSibling;
+          setCheckStyle(span, true); // initialize as checked
           inp.addEventListener('change', function() {
             adminChecked[this.dataset.adminRoute] = this.checked;
+            setCheckStyle(this.nextElementSibling, this.checked);
             applyAdminFilter();
           });
         });
