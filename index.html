@@ -258,18 +258,6 @@
         });
       }
 
-      function setCheckStyle(span, checked) {
-        if (checked) {
-          span.style.backgroundColor = menuColor;
-          span.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 16 16\' fill=\'white\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M13.707 4.293a1 1 0 0 1 0 1.414l-7 7a1 1 0 0 1-1.414 0l-3-3a1 1 0 1 1 1.414-1.414L6 10.586l6.293-6.293a1 1 0 0 1 1.414 0z\'/%3E%3C/svg%3E")';
-          span.style.backgroundSize = '80%';
-          span.style.backgroundRepeat = 'no-repeat';
-          span.style.backgroundPosition = 'center';
-        } else {
-          span.style.backgroundColor = '';
-          span.style.backgroundImage = '';
-        }
-      }
 
       function injectAdminSection() {
         if (!Object.keys(adminFilter).length) return;
@@ -305,11 +293,8 @@
 
         // Checkbox events
         sec.querySelectorAll('input[data-admin-route]').forEach(function(inp) {
-          var span = inp.nextElementSibling;
-          setCheckStyle(span, true); // initialize as checked
           inp.addEventListener('change', function() {
             adminChecked[this.dataset.adminRoute] = this.checked;
-            setCheckStyle(this.nextElementSibling, this.checked);
             applyAdminFilter();
           });
         });
